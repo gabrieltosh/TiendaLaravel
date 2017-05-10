@@ -11,4 +11,13 @@
 |
 */
 
-Route::get('/','ControladorTienda@index');
+Route::get('/',[
+    'as' => 'home',
+    'uses' => 'ControladorTienda@index'
+]);
+
+Route::get('product/{slug}',[
+    'as' => 'producto-detalle',
+    'uses'=> 'ControladorTienda@show'
+]);
+

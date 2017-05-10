@@ -9,10 +9,10 @@
                 <img src="{{$producto->imagen}}" alt="">
                 <div class="producto-info">
                     <p>{{$producto->extraer}}</p>
-                    <p>Precio: ${{number_format($producto->price,2)}}</p>
+                    <p>Precio: ${{number_format($producto->precio,2)}}</p>
                     <p>
                         <a href=""> La Quiero</a>
-                        <a href="">Leer mas</a>
+                        <a href="{{route('producto-detalle',$producto->slug)}}">Leer mas</a>
                     </p>
                 </div>
             </div>

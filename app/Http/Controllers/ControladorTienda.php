@@ -15,4 +15,10 @@ class ControladorTienda extends Controller
         //dd($productos);
         return view('tienda.index',compact('productos'));
     }
+    public function show($slug)
+    {
+        $producto= Productos::where('slug',$slug)->first();
+       // dd($producto);
+       return view('tienda.mostrar',compact('producto'));
+    }
 }
