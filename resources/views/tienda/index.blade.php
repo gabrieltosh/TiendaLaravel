@@ -1,6 +1,7 @@
 @extends('tienda.template')
 
 @section('contenido')
+@include('tienda.parcial.slider')
 <div class="container text-center">
     <div id="products">
         @foreach($productos as $producto)

@@ -1,6 +1,7 @@
 @extends('tienda.template')
 
 @section('contenido')
+@include('tienda.parcial.slider')
 <div class="container text-center">
     <div class="page-header">
         <h1><i class="fa fa-shopping-cart"></i>Detalle del Producto</h1>
@@ -18,12 +19,12 @@
                     <p>{{$producto->descripcion}}</p>
                     <h3><span class="label label-success">Precio:{{ number_format($producto->precio,2)}}</span></h3>
                     <p>
-                        <a href="" class="btn btn-warning btn-block">La quiero</a>
+                        <a href="" class="btn btn-warning btn-block">La quiero <i class="fa fa-cart-plus fa-2xs"></i></a>
                     </p>
                 </div>       
             </div>
         </div>
-    </div><hr>
+    </div><br>
     <p><a href="{{route('home')}}" class="btn btn-primary" ><i class="fa fa-chevron-circle-left"></i>Regresar</a></p>
 </div>
 @stop
