@@ -1,22 +1,22 @@
 @extends('tienda.template')
 
 @section('contenido')
-
-    <div class="productos">
+<div class="container text-center">
+    <div id="products">
         @foreach($productos as $producto)
-            <div class="producto">
-                <h3>{{ $producto->name}}</h3>
+            <div class="product white-panel">
+                <h3>{{ $producto->name}}</h3><br>
                 <img src="{{$producto->imagen}}" alt="">
-                <div class="producto-info">
+                <div class="product-info panel">
                     <p>{{$producto->extraer}}</p>
-                    <p>Precio: ${{number_format($producto->precio,2)}}</p>
+                    <h3><span class="label label-success">Precio: ${{number_format($producto->precio,2)}}</span></h3>
                     <p>
-                        <a href=""> La Quiero</a>
-                        <a href="{{route('producto-detalle',$producto->slug)}}">Leer mas</a>
+                        <a class="btn btn-warning"> <i class="fa fa-cart-plus"></i>La Quiero</a>
+                        <a class="btn btn-primary" href="{{route('producto-detalle',$producto->slug)}}"><i class="fa fa-chevron-circle-right"></i>Leer mas</a>
                     </p>
                 </div>
             </div>
         @endforeach
     </div>
-
+</div>
 @stop

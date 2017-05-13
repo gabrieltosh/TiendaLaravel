@@ -1,19 +1,29 @@
 @extends('tienda.template')
 
 @section('contenido')
-    <h1>Detalle de Producto</h1>
-
-    <div class="producto-bloque">
-        <img src="{{$producto->imagen}}" width="300" alt="">
+<div class="container text-center">
+    <div class="page-header">
+        <h1><i class="fa fa-shopping-cart"></i>Detalle del Producto</h1>
     </div>
-    <div class="producto bloque">
-        <h3>{{$producto->name}}</h3>
-        <div class="producto-info">
-        <p>{{$producto->descripcion}}</p>
-        <p>Precio:{{ number_format($producto->precio,2)}}</p>
-        <p>
-            <a href="">La quiero</a>
-        </p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="product-block">
+                <img src="{{$producto->imagen}}" alt="">
+            </div>
         </div>
-        <p><a href="{{route('home')}}">Regresar</a></p>
-    </div>
+        <div class="col-md-6">
+            <div class="product-block panel">
+                <h3>{{$producto->name}}</h3>
+                <div class="product-info panel">
+                    <p>{{$producto->descripcion}}</p>
+                    <h3><span class="label label-success">Precio:{{ number_format($producto->precio,2)}}</span></h3>
+                    <p>
+                        <a href="" class="btn btn-warning btn-block">La quiero</a>
+                    </p>
+                </div>       
+            </div>
+        </div>
+    </div><hr>
+    <p><a href="{{route('home')}}" class="btn btn-primary" ><i class="fa fa-chevron-circle-left"></i>Regresar</a></p>
+</div>
+@stop
