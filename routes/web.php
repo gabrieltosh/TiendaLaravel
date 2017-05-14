@@ -16,8 +16,23 @@ Route::get('/',[
     'uses' => 'ControladorTienda@index'
 ]);
 
-Route::get('product/{slug}',[
+Route::get('producto/{slug}',[
     'as' => 'producto-detalle',
     'uses'=> 'ControladorTienda@show'
 ]);
+//Carito
+Route::get('cart/show',[
+    'as' => 'cart-show',
+    'uses'=> 'controladorCart@show'
+]);
+
+Route::bind('producto',function($slug)
+{
+	return App\Productos::where('slug',$slug)->first();
+});
+
+Route::get('cart/add/{producto}',[
+		'as'=>'cart-add',
+		'uses'=>'controladorCart@add'
+	]);
 
