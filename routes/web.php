@@ -30,9 +30,19 @@ Route::bind('producto',function($slug)
 {
 	return App\Productos::where('slug',$slug)->first();
 });
-
 Route::get('cart/add/{producto}',[
 		'as'=>'cart-add',
 		'uses'=>'controladorCart@add'
 	]);
-
+Route::get('cart/delete/{producto}',[
+        'as'=>'cart-delete',
+        'uses'=>'controladorCart@delete'
+    ]);
+Route::get('cart/trash',[
+    'as' => 'cart-trash',
+    'uses'=> 'controladorCart@trash'
+]);
+Route::get('cart/update/{producto}/{cantidad?}',[
+        'as'=>'cart-update',
+        'uses'=>'controladorCart@update'
+    ]);

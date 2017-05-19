@@ -7,13 +7,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand main-title" href="#">Tienda</a>
+      <a class="navbar-brand main-title" href="{{route('home')}}">Tienda</a>
     </div>
 
     <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
     <p class="navbar-text">TiendaLaravel</p>
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+      <li><a href="{{route('cart-show')}}"><i class="fa fa-shopping-cart"></i></a></li>
         <li><a href="">Conocenos</a></li>
         <li><a href="">Contactanos</a></li>        
         <li class="dropdown">
